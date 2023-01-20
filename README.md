@@ -938,10 +938,10 @@ failure modes and can help us prioritize what actions to take next.*
                 resulted in problematic overfitting.
         -   Reducing overfitting is often straightforward using common
             regularization techniques that add minimal code complexity or extra
-            computation (e.g. dropout, label smoothing, weight decay), so it’s
+            computation (📍 e.g. dropout, label smoothing, weight decay), so it’s
             usually no big deal to add one or more of these to the next round of
             experiments.
-        -   For example, if the scientific hyperparameter is "number of hidden
+        -   📍 For example, if the scientific hyperparameter is "number of hidden
             layers" and the best trial that uses the largest number of hidden
             layers exhibited problematic overfitting, then we would usually
             prefer to try it again with additional regularization instead of
@@ -1170,7 +1170,7 @@ should be tuned at all.*
         -   In other words, very stingy training time budgets might require a
             learning rate decay schedule tuned to perfection in order to achieve
             a good error rate.
--   Regardless of whether a given workload is compute-bound or not, methods that
+-   📍 Regardless of whether a given workload is compute-bound or not, methods that
     increase the variance of the gradients (across batches) will usually result
     in slower training progress, and thus may increase the number of training
     steps required to reach a particular validation loss. High gradient variance
@@ -2014,7 +2014,7 @@ scale).">
 -   Changing the batch size *without changing any other details of the training pipeline* will often affect the validation set performance.
 -   However, the difference in validation set performance between two batch sizes typically goes away if the training pipeline is optimized independently for each batch size.
 -   The hyperparameters that interact most strongly with the batch size, and therefore are most important to tune separately for each batch size, are the optimizer hyperparameters (e.g. learning rate, momentum) and the regularization hyperparameters.
-    - Smaller batch sizes introduce more noise into the training algorithm due to sample variance, and this noise can have a regularizing effect. Thus, larger batch sizes can be more prone to overfitting and may require stronger regularization and/or additional regularization techniques.
+    - 📍 Smaller batch sizes introduce more noise into the training algorithm due to sample variance, and this noise can have a regularizing effect. Thus, larger batch sizes can be more prone to overfitting and may require stronger regularization and/or additional regularization techniques.
 - In addition, [the number of training steps may need to be adjusted](#choosing-the-batch-size-to-minimize-training-time) when changing the batch size.
 -   Once all these effects are taken into account, there is currently no convincing evidence that the batch size affects the maximum achievable validation performance (see [Shallue et al. 2018](https://arxiv.org/abs/1811.03600)).
 
